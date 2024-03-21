@@ -4,6 +4,7 @@ import { markTodo, removeTodo } from '../redux/slice/TodoSlice'
 function Todo() {
     const todos = useSelector(state => state.todos)
     const dispatch = useDispatch()
+    const completedCount = todos.filter(todo => todo.completed).length
     return (
         <>
             <div className='d-flex justify-content-center'>
@@ -28,7 +29,9 @@ function Todo() {
                         </li>
                     ))}
                 </ul>
+           
             </div>
+            <p className='text-center fw-bold text-info '>Completed: {completedCount}</p> 
         </>
     )
 }
