@@ -10,7 +10,7 @@ function Todo() {
             <div className='d-flex justify-content-center'>
                 <ul>
                     {todos?.map((todo) => (
-                        <li  style={{backgroundColor: todo.completed ? 'lightgreen' : '#67C6E3',width:'1000px'}} 
+                        <li  style={{backgroundColor: todo.completed ? 'lightgreen' : '#EFBC9B',width:'1000px'}} 
                             onClick={() => dispatch(markTodo(todo.id))}  
                             key={todo.id} 
                             
@@ -22,7 +22,7 @@ function Todo() {
                                     e.stopPropagation(); 
                                     dispatch(removeTodo(todo.id));
                                 }}
-                                className="text-white bg-warning py-1 px-4 rounded"
+                                className="text-white bg-danger py-1 px-4 rounded"
                             >
                                 remove
                             </button>
