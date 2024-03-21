@@ -10,13 +10,13 @@ function Todo() {
             <div className='d-flex justify-content-center'>
                 <ul>
                     {todos?.map((todo) => (
-                        <li 
+                        <li  style={{backgroundColor: todo.completed ? 'lightgreen' : '#67C6E3',width:'1000px'}} 
                             onClick={() => dispatch(markTodo(todo.id))}  
                             key={todo.id} 
-                            style={{background:'#ACE2E1',width:'1000px'}} 
+                            
                             className={`mt-4 d-flex justify-content-between items-center px-4 py-2 rounded ${todo.completed ? 'completed' : ''}`}
                         >
-                            <div style={{textDecoration:todo.completed?'line-through':'none'}} className='text-dark'>{todo.text}</div>
+                            <div className='text-dark'>{todo.text}</div>
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation(); 
